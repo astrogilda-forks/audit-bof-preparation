@@ -48,8 +48,9 @@ An Informational RFC describing roles, trust relationships, and data flows for i
 2. **Audit Data Models and Semantics**
 One or more Standards Track RFC(s) that identify and reuse existing or specify new IETF data models that can represent audit information about agents and delegated systems (e.g., interaction records, references to the identities of participating entities, delegation context, authorization state over time, or action provenance).
 If existing data models are identified the RFC(s) might create profiles that scope them to a degree of disclosure that is appropriate for audits.
-The first data model will be a record of an agent action: the acting entity, the authorization and delegation it acted under, and the effect that followed, signed by the party that observed the effect.
+The first data model will be a record of an agent action: the acting entity, the authorization and delegation it acted under, including any limits and conditions set by the delegating party, a person's approval of the specific action where one was given, and the effect that followed, signed by the party that took the action, a party that observed the effect, or both, with the record stating which.
 Each data model specification will define a verification procedure that a party holding only the records and pinned verification material (keys, transparency log checkpoints, time-stamp trust anchors) can run offline, without contacting the record producer, the audit store or the transparency service.
+The group may also define online verification profiles.
 Each will be accompanied by test vectors that give the expected verification result for valid and invalid records.
 The group will work on the minimal set of audit information and consider a registry to enable experimentation and fast deployment for additional data models.
 
